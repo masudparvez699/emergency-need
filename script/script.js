@@ -29,3 +29,21 @@ for (let btns of callButtons) {
         }
     })
 }
+// Clear Button Functionality 
+document.getElementById('button').addEventListener('click', function () {
+    document.getElementById('calling-history').innerText = "";
+})
+// Copy Button Functionality 
+let copyButtons = document.getElementsByClassName('copy-buttons')
+let copyIcon = parseInt(document.getElementById('copy-count').innerText);
+for (let copy of copyButtons) {
+    copy.addEventListener('click', function () {
+        let copiedText = copy.parentNode.parentNode.children[3].innerText;
+        alert("Number Copied to clipboard : " + copiedText)
+        navigator.clipboard.writeText(copiedText)
+        copyIcon = copyIcon + 1;
+        document.getElementById('copy-count').innerText = copyIcon;
+
+
+    })
+}
