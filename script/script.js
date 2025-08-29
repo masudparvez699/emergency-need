@@ -47,3 +47,12 @@ for (let copy of copyButtons) {
 
     })
 }
+// Heart Button funtionality 
+let heartButtons = document.getElementsByClassName('hearts');
+let heartIcon = parseInt(document.getElementById('heart-counter').innerText);
+for (let heart of heartButtons) {
+    heart.addEventListener('click', function () {
+        heartIcon = heartIcon + 1;
+        document.getElementById('heart-counter').innerText = heartIcon;
+    })
+}
